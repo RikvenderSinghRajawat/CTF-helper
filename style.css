@@ -3,12 +3,12 @@
     --bg-soft: #0e1624;
     --surface: #141f33;
     --line: #26324a;
-    --text: #e6edf8;
-    --muted: #98a6c1;
+    --text: #e8eef6;
+    --muted: #b0bcd4;
     --accent: #39d8a6;
     --accent-2: #5cc8ff;
     --danger: #ff616a;
-    --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
 * {
@@ -74,8 +74,8 @@ body {
 .main-nav a {
     color: var(--muted);
     text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
     border: 1px solid transparent;
     transition: all 0.25s ease;
 }
@@ -88,7 +88,7 @@ body {
 }
 
 .hero {
-    padding: 74px 0 48px;
+    padding: 80px 0 56px;
 }
 
 .hero-top-grid,
@@ -141,10 +141,11 @@ h3 {
 }
 
 .lead {
-    margin: 0 0 14px;
+    margin: 0 0 16px;
     color: var(--muted);
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     max-width: 68ch;
+    line-height: 1.65;
 }
 
 .achievement-badge {
@@ -202,7 +203,7 @@ h3 {
 .resume-layout,
 .project-item,
 .about-block {
-    background: linear-gradient(180deg, rgba(20, 31, 51, 0.9), rgba(14, 22, 36, 0.95));
+    background: linear-gradient(180deg, rgba(22, 35, 54, 0.95), rgba(14, 22, 36, 0.98));
     border: 1px solid var(--line);
     border-radius: 14px;
     box-shadow: var(--shadow);
@@ -403,11 +404,11 @@ h3 {
 .about-lite-panel {
     position: relative;
     overflow: hidden;
-    background: rgba(14, 22, 36, 0.9);
-    border: 1px solid rgba(92, 200, 255, 0.3);
+    background: linear-gradient(180deg, rgba(22, 35, 54, 0.95), rgba(14, 22, 36, 0.98));
+    border: 1px solid rgba(92, 200, 255, 0.35);
     border-radius: 16px;
     box-shadow: var(--shadow);
-    padding: 22px 24px;
+    padding: 24px 26px;
 }
 
 .about-lite-panel::before {
@@ -561,8 +562,9 @@ h3 {
 
 .exp-list {
     margin: 0;
-    padding-left: 18px;
+    padding-left: 20px;
     color: var(--muted);
+    line-height: 1.7;
 }
 
 .exp-list li + li {
@@ -621,12 +623,12 @@ h3 {
 .exp-logo-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: rgba(14, 22, 36, 0.9);
+    gap: 14px;
+    background: rgba(18, 28, 44, 0.95);
     border: 1px solid var(--line);
     border-radius: 12px;
     box-shadow: var(--shadow);
-    padding: 12px 14px;
+    padding: 16px 18px;
 }
 
 .exp-logo-item img {
@@ -652,11 +654,11 @@ h3 {
 }
 
 .exp-spotlight {
-    background: linear-gradient(180deg, rgba(20, 31, 51, 0.92), rgba(14, 22, 36, 0.98));
-    border: 1px solid rgba(92, 200, 255, 0.52);
+    background: linear-gradient(180deg, rgba(22, 35, 54, 0.95), rgba(14, 22, 36, 0.98));
+    border: 1px solid rgba(92, 200, 255, 0.5);
     border-radius: 14px;
     box-shadow: var(--shadow);
-    padding: 22px;
+    padding: 26px;
 }
 
 .exp-spotlight-head,
@@ -718,11 +720,11 @@ h3 {
 }
 
 .exp-role-item {
-    background: rgba(14, 22, 36, 0.92);
+    background: rgba(18, 28, 44, 0.95);
     border: 1px solid var(--line);
     border-radius: 14px;
     box-shadow: var(--shadow);
-    padding: 18px;
+    padding: 20px;
 }
 
 .exp-role-item .exp-list {
@@ -903,15 +905,43 @@ h3 {
 .edu-visual-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
+    gap: 18px;
 }
 
 .edu-visual-card {
-    background: linear-gradient(180deg, rgba(20, 31, 51, 0.92), rgba(14, 22, 36, 0.98));
+    background: linear-gradient(180deg, rgba(20, 31, 51, 0.95), rgba(14, 22, 36, 0.98));
     border: 1px solid var(--line);
     border-radius: 14px;
     box-shadow: var(--shadow);
-    padding: 18px;
+    padding: 20px;
+}
+
+/* THM badge card: full-width row, badge fits inside */
+.edu-thm-card {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+}
+
+.thm-badge-wrap {
+    margin-top: 16px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#thm-badge {
+    width: 100%;
+    max-width: 360px;
+    height: 95px;
+    border-radius: 12px;
+    border: none;
+    display: block;
 }
 
 .edu-badge-image {
@@ -921,7 +951,7 @@ h3 {
     object-fit: contain;
     border-radius: 10px;
     border: 1px solid var(--line);
-    background: #fff;
+    background: rgba(255, 255, 255, 0.96);
     padding: 8px;
     margin-bottom: 12px;
 }
@@ -933,6 +963,7 @@ h3 {
 .edu-visual-card p {
     margin: 0;
     color: var(--muted);
+    line-height: 1.65;
 }
 
 .edu-mini-list {
@@ -952,11 +983,11 @@ h3 {
 }
 
 .edu-academic-card {
-    background: rgba(14, 22, 36, 0.92);
+    background: rgba(18, 28, 44, 0.95);
     border: 1px solid var(--line);
     border-radius: 14px;
     box-shadow: var(--shadow);
-    padding: 18px;
+    padding: 20px;
 }
 
 .edu-school-head {
@@ -1013,15 +1044,15 @@ h3 {
 }
 
 .hero-card {
-    padding: 20px;
+    padding: 22px;
 }
 
 .hero-profile-card {
-    padding: 14px;
+    padding: 16px;
 }
 
 .hero-medal-card {
-    padding: 18px;
+    padding: 20px;
 }
 
 .hero-medal-photo {
@@ -1043,16 +1074,25 @@ h3 {
 
 .focus-list {
     margin: 0;
-    padding-left: 18px;
+    padding-left: 20px;
     color: var(--muted);
+    line-height: 1.7;
+}
+
+.focus-list li + li {
+    margin-top: 6px;
 }
 
 .section {
-    padding: 22px 0 34px;
+    padding: 28px 0 40px;
 }
 
 .section-head {
-    margin-bottom: 18px;
+    margin-bottom: 22px;
+}
+
+.section-head .eyebrow {
+    margin-bottom: 6px;
 }
 
 .cards {
@@ -1146,7 +1186,7 @@ h3 {
 }
 
 .page-hero {
-    padding: 56px 0 16px;
+    padding: 64px 0 24px;
 }
 
 .page-hero p {
@@ -1242,12 +1282,12 @@ h3 {
 
 .contact-grid {
     display: grid;
-    gap: 12px;
+    gap: 18px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .contact-item {
-    padding: 16px;
+    padding: 20px;
 }
 
 .contact-item a {
@@ -1328,12 +1368,12 @@ h3 {
 }
 
 .site-footer {
-    border-top: 1px solid rgba(152, 166, 193, 0.24);
-    margin-top: 40px;
+    border-top: 1px solid rgba(152, 166, 193, 0.26);
+    margin-top: 48px;
 }
 
 .footer-wrap {
-    padding: 18px 0 26px;
+    padding: 22px 0 32px;
     display: flex;
     justify-content: space-between;
     gap: 12px;
@@ -1465,7 +1505,7 @@ h3 {
     }
 
     .hero {
-        padding-top: 34px;
+        padding-top: 40px;
     }
 
     .hero-profile-photo {
@@ -1473,7 +1513,7 @@ h3 {
     }
 
     .about-lite-panel {
-        padding: 18px;
+        padding: 20px;
     }
 
     .edu-school-head {
@@ -1483,5 +1523,23 @@ h3 {
     .edu-university-logo {
         width: 62px;
         height: 62px;
+    }
+
+    .edu-thm-card {
+        padding: 20px;
+    }
+
+    #thm-badge {
+        max-width: 100%;
+        min-height: 90px;
+    }
+
+    .page-hero {
+        padding-top: 48px;
+    }
+
+    .section {
+        padding-top: 24px;
+        padding-bottom: 32px;
     }
 }

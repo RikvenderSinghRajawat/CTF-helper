@@ -44,7 +44,16 @@
             font-size: 0.92rem;
         }
 
-        .ctf-layout {
+                .ctf-points {
+            margin: 12px 0 0;
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        .ctf-points li + li {
+            margin-top: 6px;
+        }
+.ctf-layout {
             margin-top: 12px;
             display: grid;
             grid-template-columns: 1fr;
@@ -290,6 +299,11 @@
                     This page is organized by tools. Every tool section includes purpose, method-based workflow,
                     important flags, and command examples so you can practice step-by-step in labs and CTF events.
                 </p>
+                <ul class="ctf-points">
+                    <li>VAPT-ready recon and attack-surface mapping workflows.</li>
+                    <li>Manual validation steps for web, API, and network findings.</li>
+                    <li>Reporting notes that support remediation and retest.</li>
+                </ul>
                 <div class="ctf-alert">
                     Legal reminder: run these commands only in authorized CTF labs, your own machines, or systems with written permission.
                 </div>
@@ -1937,7 +1951,7 @@ curl http://YOUR-COLLAB/rce-proof</code></pre>
         <div class="container footer-wrap">
             <p>Rikvender Singh Rajawat | Offensive Security Portfolio</p>
             <p>Jaipur, Rajasthan, India</p>
-            <p>TryHackMe: Top 4% | Labs Completed: 100+</p>
+            <p>TryHackMe: Top 4% | 100+ Red Team Labs</p>
         </div>
     </footer>
 
