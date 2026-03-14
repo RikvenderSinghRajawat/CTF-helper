@@ -3,19 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .responsive-iframe { width: 100%; height: 300px; border: none; }
-        @media (min-width: 768px) {
-            .responsive-iframe { height: 500px; }
-        }
-    </style>
+    <base href="/">
+    <title>Education & Certifications | Rikvender Singh Rajawat</title>
+    <meta name="description" content="Education, certifications, and IndiaSkills recognition of Rikvender Singh Rajawat.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Education</h1>
-    <h2>Practical Learning</h2>
-    <iframe class="responsive-iframe" src="https://tryhackme.com/badge/123456" title="TryHackMe Badge"></iframe>
-    <p>Details about practical learning...</p>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="/">Rikvender<span class="dot">.</span></a>
+            <nav class="main-nav">
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/experience/">Experience</a>
+                <a class="active" href="/education/">Education & Certificates</a>
+                <a href="/ctf/">Tools Guide</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero container reveal edu-page-hero">
+            <div class="edu-hero-grid">
+                <div>
+                    <p class="eyebrow">Education & Certifications</p>
+                    <h1>Academic Track and Security Credentials</h1>
+                    <p>
+                        A focused learning journey combining university academics, practical certifications,
+                        competition performance, and hands-on labs.
+                    </p>
+                </div>
+                <aside class="edu-side-card">
+                    <span class="edu-mini-label">Highlights</span>
+                    <ul class="edu-side-list">
+                        <li>CEH v13 (EC-Council)</li>
+                        <li>IndiaSkills: State Gold + West Region Gold</li>
+                        <li>TryHackMe: Top 4% global rank</li>
+                        <li>100+ Labs Completed</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="edu-visual-grid">
+                <article class="edu-visual-card reveal">
+                    <img class="edu-badge-image" src="indiaskill.png" alt="IndiaSkills logo">
+                    <h3>IndiaSkills 2025-2026</h3>
+                    <p>Cyber Security: State Gold Winner and West Region Gold Winner.</p>
+                </article>
+                <article class="edu-visual-card reveal delay-1">
+                    <img class="edu-badge-image" src="ceh.png" alt="Certified Ethical Hacker certification logo">
+                    <h3>CEH v13 Certification</h3>
+                    <p>EC-Council certification focused on offensive security and penetration testing.</p>
+                </article>
+                <article class="edu-visual-card reveal delay-2">
+                    <h3>Practical Learning</h3>
+                    <ul class="edu-mini-list">
+                        <li>TryHackMe: Top 4% global rank</li>
+                        <li>100+ labs solved</li>
+                        <li>Web, API, and escalation labs</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="section-head reveal">
+                <p class="eyebrow">Education</p>
+                <h2>Academic Background</h2>
+            </div>
+            <div class="edu-academic-grid">
+                <article class="edu-academic-card reveal">
+                    <div class="edu-school-head">
+                        <img class="edu-university-logo" src="jnu-logo.png" alt="Jaipur National University logo">
+                        <div>
+                            <p class="ed-school-date">2024 - 2025</p>
+                            <h3>B.Tech (Computer Science Engineering)</h3>
+                            <p class="edu-school-name">Jaipur National University</p>
+                        </div>
+                    </div>
+                    <p class="edu-school-gpa">CGPA: 8.2</p>
+                    <p>Focused on core CSE subjects with strong alignment to cybersecurity problem-solving.</p>
+                </article>
+
+                <article class="edu-academic-card reveal delay-1">
+                    <div class="edu-school-head">
+                        <img class="edu-university-logo" src="bsdu_logo.jpg" alt="Bhartiya Skill Development University logo">
+                        <div>
+                            <p class="ed-school-date">2021 - 2024</p>
+                            <h3>B.Voc (IT and Networking)</h3>
+                            <p class="edu-school-name">Bhartiya Skill Development University</p>
+                        </div>
+                    </div>
+                    <p class="edu-school-gpa">CGPA: 8.13</p>
+                    <p>Hands-on training in networking, systems administration, and operational IT security.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="section-head reveal">
+                <p class="eyebrow">Certifications</p>
+                <h2>Professional Credentials</h2>
+            </div>
+            <div class="edu-cert-layout">
+                <article class="edu-cert-panel reveal">
+                    <h3>Security Certifications</h3>
+                    <ul class="edu-mini-list">
+                        <li>Certified Ethical Hacker (CEH v13) - EC-Council</li>
+                        <li>Ethical Hacker Badge - Cisco</li>
+                        <li>Advent of Cyber 2024 - TryHackMe</li>
+                    </ul>
+                </article>
+                <article class="edu-cert-panel reveal delay-1">
+                    <h3>Technical Foundations</h3>
+                    <ul class="edu-mini-list">
+                        <li>Python Programming - NSDC</li>
+                        <li>Python Essentials - Cisco</li>
+                        <li>Continuous CTF and lab-based practice workflow</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container reveal">
+            <div class="ed-actions">
+                <a class="btn btn-primary" href="/experience/">View Experience</a>
+                <a class="btn btn-ghost" href="/download/#resume-secure-rsr" data-download-token="resume-secure-rsr">Download Resume</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <p>Rikvender Singh Rajawat | Offensive Security Portfolio</p>
+            <p>Jaipur, Rajasthan, India</p>
+            <p>TryHackMe: Top 4% | Labs Completed: 100+</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
