@@ -8,6 +8,20 @@
         }
     });
     const DOWNLOAD_SESSION_KEY = "secure_download_access";
+    const DOWNLOAD_TOKEN_EXPIRY_MS = 5 * 60 * 1000; // 5 minutes
+
+    function getPdfAbsoluteUrl(relativePath) {
+        try {
+            const loc = window.location;
+            if (loc.protocol === "http:" || loc.protocol === "https:") {
+                return new URL(relativePath, loc.origin + "/").href;
+            }
+            const base = loc.href.replace(/[#?].*$/, "").replace(/[^/]*$/, "");
+            return new URL(relativePath, base || "./").href;
+        } catch (e) {
+            return relativePath;
+        }
+    }
 
     function initRevealObserver() {
         const revealNodes = document.querySelectorAll(".reveal");
@@ -227,7 +241,7 @@
                 const accessPayload = {
                     token,
                     nonce: createNonce(),
-                    expiresAt: Date.now() + 2 * 60 * 1000
+                    expiresAt: Date.now() + DOWNLOAD_TOKEN_EXPIRY_MS
                 };
 
                 try {
@@ -286,23 +300,34 @@
             return;
         }
 
+        const pdfUrl = getPdfAbsoluteUrl(asset.path);
+
         if (statusNode) {
-            statusNode.textContent = "Secure token verified. Download should start automatically.";
+            statusNode.textContent = "Secure token verified. Download starting...";
         }
 
         if (fallbackLink) {
-            fallbackLink.href = asset.path;
+            fallbackLink.href = pdfUrl;
             fallbackLink.download = asset.downloadName;
             fallbackLink.hidden = false;
         }
 
+        // Trigger download with slight delay so fallback link is ready; some browsers block immediate programmatic clicks
         const autoDownload = document.createElement("a");
-        autoDownload.href = asset.path;
+        autoDownload.href = pdfUrl;
         autoDownload.download = asset.downloadName;
-        autoDownload.hidden = true;
+        autoDownload.setAttribute("rel", "noopener");
         document.body.appendChild(autoDownload);
-        autoDownload.click();
-        autoDownload.remove();
+        requestAnimationFrame(() => {
+            autoDownload.click();
+            setTimeout(() => autoDownload.remove(), 100);
+        });
+
+        if (statusNode) {
+            setTimeout(() => {
+                statusNode.textContent = "If the download did not start, use the \"Download Manually\" button below.";
+            }, 1500);
+        }
     }
 
     document.addEventListener("DOMContentLoaded", () => {
